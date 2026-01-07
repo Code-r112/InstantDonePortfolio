@@ -1,0 +1,178 @@
+.projects {
+    padding: 6rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.projects__header {
+    margin-bottom: 4rem;
+}
+
+.projects__title {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.projects__subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 500px;
+}
+
+.projects__carousel {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 4rem;
+    position: relative;
+    /* Fade Masks */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.projects__track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scrollProjects 40s linear infinite;
+    padding: 1rem 0;
+    /* Space for hover effects */
+}
+
+.project-card {
+    width: 450px;
+    /* Adjust as needed for 3 cards per view on large screens, or use min-width */
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.project-image {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    height: 350px;
+    /* Uniform height */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.03);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.arrow-icon {
+    font-size: 1.2rem;
+}
+
+.project-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+    opacity: 0;
+    /* Hidden by default for cleaner look in carousel, show on hover maybe? Or keep generic */
+    transition: opacity 0.3s;
+}
+
+/* Showing text overlay on hover or always? Let's hide it for cleaner design in carousel or show on hover */
+.project-card:hover .project-text-overlay {
+    opacity: 1;
+}
+
+.project-text-overlay h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Info below image */
+.project-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tags span {
+    border: 1px solid black;
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@keyframes scrollProjects {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.projects__track:hover {
+    animation-play-state: paused;
+}
+
+@media (max-width: 1024px) {
+    .project-card {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 300px;
+    }
+
+    .project-text-overlay {
+        opacity: 1;
+        /* Always show on mobile since no hover */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    }
+}

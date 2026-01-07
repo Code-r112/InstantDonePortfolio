@@ -1,0 +1,121 @@
+.header {
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    /* Pure white as requested */
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+/* Optional: Add a border on scroll if we tracked state, but CSS-only sticky is fine */
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.brand-text strong {
+    font-weight: 700;
+}
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    background-color: black;
+    border-radius: 8px;
+    /* Rounded square */
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    /* Smaller as requested */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.header__menu {
+    display: flex;
+    gap: 3rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.header__menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s;
+    letter-spacing: 0.05em;
+}
+
+.header__menu a:hover {
+    text-decoration: underline;
+}
+
+.header__menu a.active {
+    color: var(--color-black);
+}
+
+.dropdown-arrow {
+    font-size: 0.6rem;
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-gray-800);
+    transform: translateY(-1px);
+}
+
+.btn-contact {
+    border: 1px solid black;
+    background: transparent;
+    padding: 0.8rem 2.5rem;
+    /* Increased vertical padding */
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.btn-contact:hover {
+    background-color: black;
+    color: white;
+}

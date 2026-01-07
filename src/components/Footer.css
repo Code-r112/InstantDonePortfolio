@@ -1,0 +1,125 @@
+.footer {
+    padding: 6rem 0 2rem;
+}
+
+.footer__header {
+    margin-bottom: 4rem;
+}
+
+.footer__title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.footer__desc {
+    font-size: 1.5rem;
+    color: #666;
+    max-width: 800px;
+    line-height: 1.4;
+}
+
+.footer__contact-main {
+    margin-bottom: 8rem;
+}
+
+.footer__contact-main p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer__email {
+    display: block;
+    font-size: 5rem;
+    /* Significantly larger */
+    font-weight: 700;
+    margin-bottom: 3rem;
+    word-break: break-all;
+    line-height: 1;
+}
+
+.btn-get-in-touch {
+    background: black;
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Bottom Cols */
+.footer__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    border-top: 1px solid var(--color-border);
+    /* Does the design have this? Maybe not visually explicit but good for separation */
+    padding-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.footer__col h4 {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1.2 rem;
+}
+
+.footer__address p {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.brand-col {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.brand-icon-small {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: black;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.footer__policies {
+    display: flex;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer__title {
+        font-size: 3rem;
+    }
+
+    .footer__email {
+        font-size: 1.8rem;
+    }
+
+    .footer__bottom {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .brand-col {
+        justify-content: flex-start;
+    }
+}

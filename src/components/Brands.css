@@ -1,0 +1,64 @@
+.brands {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brands__header {
+    margin-bottom: 2rem;
+}
+
+.section-label {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.brands__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.brand-item {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.brand-item:hover {
+    opacity: 0.7;
+}
+
+/* Simulate specific logo styles */
+.brand-item:nth-child(1) {
+    font-family: sans-serif;
+    letter-spacing: -1px;
+}
+
+/* Facebook */
+.brand-item:nth-child(2) {
+    font-family: sans-serif;
+}
+
+/* Google */
+.brand-item:nth-child(3) {
+    font-weight: 800;
+}
+
+/* Logitech */
+.brand-item:nth-child(4) {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* LinkedIn */
+.brand-item:nth-child(5) {
+    font-family: sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Philips */
