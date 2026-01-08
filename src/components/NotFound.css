@@ -1,0 +1,81 @@
+.not-found {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 2rem;
+}
+
+.not-found__content {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.not-found__code {
+    font-size: 12rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.05em;
+    font-family: var(--font-main);
+}
+
+.not-found__text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.not-found__subtext {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-home:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Page Wrapper Dark Mode Support (inherited if wrapped correctly, 
+   but explicitly handling here if standalone) */
+/* Since this component uses vars, it relies on a parent .page-wrapper or :root vars.
+   App.jsx wraps everything in .page-wrapper usually. 
+*/
+
+@media (max-width: 768px) {
+    .not-found__code {
+        font-size: 8rem;
+    }
+
+    .not-found__text {
+        font-size: 1.5rem;
+    }
+}

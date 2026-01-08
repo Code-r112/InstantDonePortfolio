@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import ComingSoon from './components/ComingSoon';
+import NotFound from './components/NotFound';
 
 // TOGGLE THIS TO TRUE TO SHOW COMING SOON PAGE
 const SHOW_COMING_SOON = false;
@@ -49,6 +50,16 @@ const RevealSection = ({ children }) => {
 function App() {
   if (SHOW_COMING_SOON) {
     return <ComingSoon />;
+  }
+
+  // Simple client-side 404 check
+  const path = window.location.pathname;
+  if (path !== '/' && path !== '/index.html') {
+    return (
+      <div className="page-wrapper">
+        <NotFound />
+      </div>
+    );
   }
 
   // Scroll Progress & Go Top Logic

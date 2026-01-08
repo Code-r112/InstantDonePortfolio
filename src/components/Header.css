@@ -1,37 +1,28 @@
 .header {
     padding: 1rem 2rem;
-    position: fixed;
-    top: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    width: 80%;
-    /* Compact width */
-    max-width: var(--spacing-container);
-    border-radius: 50px;
-
-    /* Glassmorphism */
-    background-color: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-
+    width: 100%;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
     transition: all 0.3s ease;
 }
 
 .page-wrapper.dark-mode .header {
-    background-color: rgba(17, 17, 17, 0.6);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-white);
+    /* Handles variable inversion */
+    border-color: var(--color-border);
+    box-shadow: none;
 }
-
-/* Optional: Add a border on scroll if we tracked state, but CSS-only sticky is fine */
 
 .header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: var(--spacing-container);
+    /* Ensure inner content is constrained */
+    margin: 0 auto;
 }
 
 .header__brand {
@@ -62,6 +53,11 @@
     gap: 0.5rem;
     letter-spacing: -1px;
     color: var(--color-black);
+}
+
+.header__nav {
+    margin-left: auto;
+    margin-right: 2rem;
 }
 
 .header__menu {
