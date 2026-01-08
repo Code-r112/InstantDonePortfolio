@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import ComingSoon from './components/ComingSoon';
 
 // TOGGLE THIS TO TRUE TO SHOW COMING SOON PAGE
-const SHOW_COMING_SOON = true;
+const SHOW_COMING_SOON = false;
 
 const RevealSection = ({ children }) => {
   const domRef = useRef();
