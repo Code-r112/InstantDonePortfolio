@@ -10,7 +10,7 @@
 .section-label {
     font-family: var(--font-main);
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-text-muted);
 }
 
 .brands__list {
@@ -23,7 +23,7 @@
 .brand-item {
     font-size: 2rem;
     font-weight: 700;
-    color: black;
+    color: var(--color-black);
     opacity: 1;
     cursor: pointer;
 }
@@ -61,4 +61,36 @@
     letter-spacing: 1px;
 }
 
+/* Brands Carousel Logic */
+.brands__carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    /* Fade Masks */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.brands__track {
+    display: flex;
+    gap: 4rem;
+    width: max-content;
+    animation: scrollBrands 20s linear infinite;
+}
+
+@keyframes scrollBrands {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 /* Philips */
+@media (max-width: 768px) {
+    .brands__track {
+        gap: 2rem;
+    }
+
+    .brand-item {
+        font-size: 1.5rem;
+    }
+}

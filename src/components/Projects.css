@@ -16,7 +16,7 @@
 
 .projects__subtitle {
     font-size: 1.1rem;
-    color: #666;
+    color: var(--color-text-muted);
     max-width: 500px;
 }
 
@@ -73,12 +73,12 @@
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: black;
+    background: var(--color-black);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color-white);
     opacity: 0;
     transition: opacity 0.3s;
     z-index: 10;
@@ -126,7 +126,7 @@
 }
 
 .project-info p {
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
 }
@@ -138,7 +138,7 @@
 }
 
 .tags span {
-    border: 1px solid black;
+    border: 1px solid var(--color-black);
     padding: 0.4rem 1.2rem;
     border-radius: 50px;
     font-size: 0.85rem;
@@ -167,7 +167,15 @@
 
 @media (max-width: 768px) {
     .project-card {
-        width: 300px;
+        width: 75vw;
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+    }
+
+    .projects {
+        padding: 4rem 0;
     }
 
     .project-text-overlay {

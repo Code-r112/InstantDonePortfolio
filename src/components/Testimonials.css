@@ -54,7 +54,7 @@
 }
 
 .author__info p {
-    color: #666;
+    color: var(--color-text-muted);
     font-size: 0.9rem;
 }
 
@@ -65,8 +65,8 @@
     /* Align roughly with the text/center */
     width: 60px;
     height: 60px;
-    background: black;
-    color: white;
+    background: var(--color-black);
+    color: var(--color-white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -102,15 +102,38 @@
 
 .stat-item p {
     font-size: 1rem;
-    color: #666;
+    color: var(--color-text-muted);
 }
 
 @media (max-width: 768px) {
+    .testimonials__title {
+        font-size: 2.5rem;
+    }
+
     .quote {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .stats-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 items now */
+        gap: 0.5rem;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+        /* Much smaller to fit */
+    }
+
+    .stat-item p {
+        font-size: 0.75rem;
+    }
+
+    .next-testimonial-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: auto;
+        bottom: -20px;
     }
 }

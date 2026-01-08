@@ -1,12 +1,29 @@
 .header {
-    padding: 2rem 0;
-    position: sticky;
-    top: 0;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
-    background-color: #ffffff;
-    /* Pure white as requested */
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
+    width: 80%;
+    /* Compact width */
+    max-width: var(--spacing-container);
+    border-radius: 50px;
+
+    /* Glassmorphism */
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+
+    transition: all 0.3s ease;
+}
+
+.page-wrapper.dark-mode .header {
+    background-color: rgba(17, 17, 17, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Optional: Add a border on scroll if we tracked state, but CSS-only sticky is fine */
@@ -31,7 +48,7 @@
 .brand-icon {
     width: 24px;
     height: 24px;
-    background-color: black;
+    background-color: var(--color-black);
     border-radius: 8px;
     /* Rounded square */
 }
@@ -44,6 +61,7 @@
     align-items: center;
     gap: 0.5rem;
     letter-spacing: -1px;
+    color: var(--color-black);
 }
 
 .header__menu {
@@ -59,6 +77,7 @@
     gap: 0.3rem;
     transition: color 0.3s;
     letter-spacing: 0.05em;
+    color: var(--color-black);
 }
 
 .header__menu a:hover {
@@ -99,13 +118,15 @@
 }
 
 .btn-primary:hover {
-    background-color: var(--color-gray-800);
+    background-color: var(--color-gray-100);
+    /* Inverted hover for visibility */
+    color: var(--color-black);
     transform: translateY(-1px);
 }
 
 .btn-contact {
-    border: 1px solid black;
-    background: transparent;
+    border: 1px solid var(--color-black);
+    background: var(--color-black);
     padding: 0.8rem 2.5rem;
     /* Increased vertical padding */
     border-radius: 50px;
@@ -113,9 +134,137 @@
     cursor: pointer;
     transition: all 0.3s;
     font-size: 1rem;
+    color: var(--color-white);
 }
 
 .btn-contact:hover {
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 90%;
+        padding: 0.8rem 1rem;
+        top: 1rem;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .header__actions .btn-contact {
+        display: none;
+        /* Hide default contact button on mobile, show in menu */
+    }
+}
+
+/* Mobile Menu Toggle (Hamburger) */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2000;
+    padding: 0;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-black);
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+/* Hamburger Animation */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -6px);
+    /* Adjust based on exact height logic if needed, usually simple toggle is fine */
+    /* Wait, simple 3 bar to X usually requires 3 bars. I used 2 spans in JSX. 
+       Let's use 2 bars turning into X. 
+    */
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
+/* But wait, standard hamburger has 3 lines. I'll stick to 2 lines for a modern "menu" feel or add a 3rd. 
+   State below assumes 2 spans. 
+   Let's just toggle active class styles.
+*/
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-white);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav ul {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    align-items: center;
+}
+
+.mobile-nav a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+.mobile-btn {
+    display: block !important;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    background: var(--color-black);
+    color: var(--color-white);
 }

@@ -14,7 +14,7 @@
 
 .footer__desc {
     font-size: 1.5rem;
-    color: #666;
+    color: var(--color-text-muted);
     max-width: 800px;
     line-height: 1.4;
 }
@@ -39,8 +39,8 @@
 }
 
 .btn-get-in-touch {
-    background: black;
-    color: white;
+    background: var(--color-black);
+    color: var(--color-white);
     padding: 1.2rem 3rem;
     border-radius: 50px;
     font-weight: 600;
@@ -59,7 +59,7 @@
 }
 
 .footer__col h4 {
-    color: #666;
+    color: var(--color-text-muted);
     margin-bottom: 1.5rem;
     font-size: 1.2 rem;
 }
@@ -84,13 +84,21 @@
     justify-content: flex-end;
 }
 
-.brand-icon-small {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    background: black;
-    border-radius: 3px;
-    margin-left: 5px;
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -1px;
+    color: var(--color-black);
+}
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-black);
+    border-radius: 8px;
 }
 
 .footer__copyright {
@@ -106,20 +114,40 @@
 }
 
 @media (max-width: 768px) {
+    .footer {
+        padding: 4rem 0 2rem;
+    }
+
     .footer__title {
         font-size: 3rem;
     }
 
     .footer__email {
         font-size: 1.8rem;
+        word-break: break-word;
     }
 
     .footer__bottom {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
+        padding-top: 2rem;
     }
 
     .brand-col {
         justify-content: flex-start;
+        order: -1;
+        /* Move logo to top of bottom section if desired, or keep as is. Let's keep as is. */
+        margin-bottom: 2rem;
+    }
+
+    .footer__copyright {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__policies {
+        gap: 1rem;
     }
 }

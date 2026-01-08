@@ -108,10 +108,7 @@ const Testimonials = () => {
                         <h3><Counter end={359} /></h3>
                         <p>projects</p>
                     </div>
-                    <div className="stat-item">
-                        <h3><Counter end={7} /></h3>
-                        <p>awards</p>
-                    </div>
+
                 </div>
             </div>
         </section>

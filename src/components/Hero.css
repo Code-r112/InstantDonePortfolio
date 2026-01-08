@@ -1,5 +1,5 @@
 .hero {
-    padding-top: 3rem;
+    padding-top: 10rem;
     padding-bottom: 5rem;
 }
 
@@ -20,13 +20,13 @@
 
     /* Shimmer Effect */
     background: linear-gradient(to right,
-            #000 0%,
-            #000 40%,
-            #555 50%,
-            #000 60%,
-            #000 100%);
+            var(--color-black) 0%,
+            var(--color-black) 40%,
+            #888 50%,
+            var(--color-black) 60%,
+            var(--color-black) 100%);
     background-size: 200% auto;
-    color: #000;
+    color: var(--color-black);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,8 +74,8 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: black;
-    color: white;
+    background-color: var(--color-black);
+    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +96,7 @@
     width: 100%;
     position: relative;
     /* Fade Effect on Sides */
+    /* Using variables for mask to ensure it works? No, mask needs explicit colors usually or just opacity. Black works for transparency mask regardless of theme color, so keeping black. */
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
@@ -122,9 +123,7 @@
     /* Removed grayscale filter */
 }
 
-.carousel-item:hover img {
-    /* No change needed explicitly if filter is gone, but keeping empty or removing rule */
-}
+
 
 @keyframes scroll {
     0% {
@@ -223,8 +222,8 @@
 }
 
 .card--black {
-    background-color: #111;
-    color: white;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .card--white {
@@ -303,7 +302,8 @@
 /* Specifics for Latest Work Card */
 .card--work {
     text-align: center;
-    background-color: #111;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .card--work .card__header p {
@@ -324,12 +324,12 @@
 }
 
 .phone-screen {
-    background: white;
+    background: var(--color-white);
     height: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 1rem;
-    color: black;
+    color: var(--color-black);
     text-align: left;
 }
 
@@ -374,6 +374,24 @@
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 7rem;
+    }
+
+    .display-text {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero__description {
+        font-size: 1.1rem;
+    }
+
+    .carousel-item {
+        width: 60vw;
+        height: 180px;
+    }
+
     .hero__title {
         font-size: 2.5rem;
     }
@@ -386,5 +404,6 @@
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+        font-size: 0.7rem;
     }
 }

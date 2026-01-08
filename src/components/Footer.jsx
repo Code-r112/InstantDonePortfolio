@@ -36,7 +36,9 @@ const Footer = () => {
                     </div>
 
                     <div className="footer__col brand-col">
-                        <span className="brand-text">Instant <strong>Done</strong> <div className="brand-icon-small"></div></span>
+                        <span className="logo-text">
+                            <span>Instant<strong>Done</strong></span>
+                        </span>
                     </div>
                 </div>
 
