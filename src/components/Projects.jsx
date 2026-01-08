@@ -6,7 +6,7 @@ const projectsData = [
         title: "FOBOIPARA (Bank of India)",
         desc: "Pushing creative boundaries and technologies, you've come to the right place",
         image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        tags: ["3D Design", "Marketing", "Social Media", "Video & Web", "Photo"],
+        tags: ["Website Development"],
         overlayTitle: "FEDERATION OF BANK OF INDIA PENSIONERS AND RETIREES ASSOCIATIONS",
         link: "https://foboipara.in"
     },
@@ -14,7 +14,7 @@ const projectsData = [
         title: "Brightix",
         desc: "Years of experience to create unique design in agile and fast manner",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        tags: ["Branding", "Design"],
+        tags: ["SEO"],
         overlayTitle: "Launch Your Tech Career with Real-World Experience",
         link: "https://brightix.in"
     },
@@ -22,7 +22,7 @@ const projectsData = [
         title: "Prabhat Electricals",
         desc: "This way, we can cut out all the project management and focus just on the design processes",
         image: "https://images.unsplash.com/photo-1581092921461-eab62e97a782?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        tags: ["Video & Web", "Strategy", "Design"],
+        tags: ["Google Business Profile"],
         overlayTitle: "POWERING process ELECTRIFYING VISION."
     }
 ];

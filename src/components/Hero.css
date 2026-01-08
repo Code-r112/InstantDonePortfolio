@@ -108,10 +108,9 @@
 }
 
 .carousel-item {
-    width: 350px;
-    /* Fixed width for consistency */
-    height: 450px;
-    /* Portrait orientation as per grid look */
+    width: 450px;
+    /* Landscape orientation */
+    height: 300px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -145,8 +144,8 @@
 
 @media (max-width: 768px) {
     .carousel-item {
-        width: 250px;
-        height: 350px;
+        width: 300px;
+        height: 200px;
     }
 }
 

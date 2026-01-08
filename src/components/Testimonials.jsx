@@ -5,23 +5,23 @@ const testimonialsData = [
     {
         id: 1,
         quote: "“The Bureau impressive expertise and strategy advisory were crucial to achieving our goals. The experience was great in all dimensions.”",
-        name: "Xavier Kim",
+        name: "Mukund Satpute",
         position: "CEO at Pixsellz",
-        avatar: "https://ui-avatars.com/api/?name=Xavier+Kim&background=random"
+        avatar: "https://ui-avatars.com/api/?name=Mukund+Satpute&background=random"
     },
     {
         id: 2,
         quote: "“Instant Done transformed our brand identity completely. Their attention to detail and grid-based design philosophy gave us the modern edge we needed.”",
-        name: "Sarah Jenkins",
+        name: "Somnath Chakraborthy",
         position: "CMO at TechFlow",
-        avatar: "https://ui-avatars.com/api/?name=Sarah+Jenkins&background=random"
+        avatar: "https://ui-avatars.com/api/?name=Somnath+Chakraborthy&background=random"
     },
     {
         id: 3,
         quote: "“Working with this team was seamless. They understood our vision immediately and delivered a product that exceeded our expectations in record time.”",
-        name: "Marcus Chen",
+        name: "Laxmikant Mahindrakar",
         position: "Founder of StartUpX",
-        avatar: "https://ui-avatars.com/api/?name=Marcus+Chen&background=random"
+        avatar: "https://ui-avatars.com/api/?name=Laxmikant+Mahindrakar&background=random"
     }
 ];
 
